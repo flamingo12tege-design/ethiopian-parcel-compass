@@ -5,5 +5,5 @@ import { createServerFn } from "@tanstack/react-start";
  * sign-in screen anyway), so returning it is safe; the client secret never leaves the server.
  */
 export const getGoogleWebClientId = createServerFn({ method: "GET" }).handler(async () => {
-  return { webClientId: process.env.GOOGLE_OAUTH_CLIENT_ID ?? null };
+  return { webClientId: process.env["GOOGLE_OAUTH_CLIENT_ID"] ?? null };
 });
