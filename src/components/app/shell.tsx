@@ -42,14 +42,14 @@ export function BrandMark({ light = false, size = "sm" }: { light?: boolean; siz
     <div className="flex items-center gap-2">
       <img
         src={logo.url}
-        alt="Ethiopian Postal Service logo"
+        alt="Ethio Post logo"
         width={640}
         height={640}
         className={cn("shrink-0 rounded-full bg-background object-cover", size === "lg" ? "h-16 w-16" : "h-10 w-10")}
       />
       <div className={cn("leading-tight", light ? "text-primary-foreground" : "text-primary")}>
         <div className="font-ethiopic text-[13px] font-bold">የኢትዮጵያ ፖስታ አገልግሎት</div>
-        <div className="text-[10px] font-semibold opacity-90">Ethiopian Postal Service</div>
+        <div className="text-[10px] font-semibold opacity-90">Ethio Post</div>
       </div>
     </div>
   );
