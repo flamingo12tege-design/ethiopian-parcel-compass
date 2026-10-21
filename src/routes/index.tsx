@@ -55,19 +55,19 @@ function Home() {
   return (
     <Screen>
       <header className="pt-safe bg-primary text-primary-foreground">
-        <div className="grid h-16 grid-cols-[minmax(0,1fr)_2.5rem] items-center px-3">
+        <div className="grid h-16 grid-cols-[minmax(0,1fr)_2.75rem] items-center px-3">
           <div className="flex min-w-0 justify-start">
             <BrandMark light />
           </div>
           <Link
             to="/notifications"
-            aria-label="Notifications"
-            className="relative grid h-10 w-10 place-items-center"
+            aria-label={unread ? `Notifications, ${unread} unread` : "Notifications"}
+            className="relative grid h-11 w-11 place-items-center rounded-full bg-primary-foreground/15 transition active:scale-95 hover:bg-primary-foreground/25"
           >
-            <Bell className="h-6 w-6" />
+            <Bell className="h-5 w-5" strokeWidth={2.25} />
             {!!unread && (
-              <span className="absolute right-1 top-1 grid h-4 min-w-4 place-items-center rounded-full bg-highlight px-1 text-[10px] font-bold text-highlight-foreground">
-                {unread}
+              <span className="absolute -right-0.5 -top-0.5 grid h-5 min-w-5 place-items-center rounded-full border-2 border-primary bg-destructive px-1 text-[10px] font-bold text-destructive-foreground">
+                {unread > 9 ? "9+" : unread}
               </span>
             )}
           </Link>
