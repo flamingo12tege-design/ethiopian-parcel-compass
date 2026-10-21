@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "631909370542",
+    "project_id": "nimble-octagon-398519",
+    "storage_bucket": "nimble-octagon-398519.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631909370542:android:dedbe0eca2a0e46fb13b3f",
+        "android_client_info": {
+          "package_name": "com.ethiotechs"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDq3MB0P_f3MBbZzFZT3Hf7CurDFZp432c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631909370542:android:40c2b221128c3e44b13b3f",
+        "android_client_info": {
+          "package_name": "et.post.tegene"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDq3MB0P_f3MBbZzFZT3Hf7CurDFZp432c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
