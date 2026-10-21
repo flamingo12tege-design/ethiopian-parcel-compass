@@ -31,7 +31,7 @@ Remove them before going live.
 ```bash
 git clone <your repo> && cd <repo>
 bun install
-# set CONFIG_URL in native-shell/index.html to your GitHub raw app-config.json (see "Remote server switch")
+# CONFIG_URL in native-shell/index.html already points at the public repo's app-config.json (see "Remote server switch")
 npx cap add android
 cp /path/to/google-services.json android/app/google-services.json
 npx cap sync android
