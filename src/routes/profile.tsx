@@ -75,6 +75,9 @@ function Profile() {
     }
   };
 
+  // Signed-out visitors are sent to sign-in; show nothing meanwhile so no page flashes first.
+  if (!user) return <Screen><div className="flex-1" /></Screen>;
+
   return (
     <Screen>
       <header className="pt-safe bg-primary px-5 pb-8 pt-6 text-primary-foreground">
