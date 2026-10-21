@@ -58,3 +58,12 @@ The APK bundles `native-shell/index.html`, which reads `public/app-config.json` 
 (raw URL in `CONFIG_URL`) and opens `serverUrl`. If GitHub is unreachable it uses the last known URL,
 then the Lovable URL. To move all installed apps (e.g. to Vercel), edit `serverUrl` on GitHub; the new
 host must be listed in `server.allowNavigation` in `capacitor.config.ts` when the APK is built.
+
+## Native Google sign-in (Android)
+
+Inside the Android app, "Continue with Google" opens Google's own account picker (no web page or
+web address shown; Google also blocks web sign-in inside apps). It uses the Web client ID stored in
+the `GOOGLE_OAUTH_CLIENT_ID` secret. In the same Google Cloud project, also create an OAuth client of
+type **Android** with package `et.post.tegene` and the **SHA-1 of the key that signs the APK**
+(`./gradlew signingReport` in `android/`). Add one Android client per signing key (debug and release).
+If the consent screen is in Testing, add test accounts under Audience → Test users.

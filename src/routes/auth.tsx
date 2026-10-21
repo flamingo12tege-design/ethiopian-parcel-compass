@@ -7,6 +7,8 @@ import { Screen, PrimaryButton, OutlineButton, BrandMark, inputClass } from "@/c
 import { supabase } from "@/integrations/supabase/client";
 import { lovable } from "@/integrations/lovable/index";
 import { useAuth } from "@/lib/auth";
+import { isNativeApp } from "@/lib/native-push";
+import { nativeGoogleSignIn } from "@/lib/native-google";
 
 const safePath = (p?: string) => (p && p.startsWith("/") && !p.startsWith("//") ? p : "/");
 
