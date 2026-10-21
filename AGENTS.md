@@ -17,6 +17,7 @@
 - Push sending lives in src/lib/push.server.ts and claims rows pending->sending atomically; never send FCM from the client.
 - Demo records are flagged `is_demo` / `is_simulated` and must always be labelled in the UI.
 - Android uses Capacitor with a bundled launcher (native-shell) that reads the server URL from app-config.json on GitHub, falling back to the Lovable URL; so hosting can move without a new APK.
+- Google sign-in inside the native app uses the Capacitor social-login plugin and exchanges the ID token (hashed nonce) for a session; web keeps the managed OAuth flow, because Google blocks OAuth pages in embedded WebViews.
 - Recent tracking stores only successful identifiers on the device; Home reads the masked RPC first and uses the shared five-minute live-carrier query only after a successful empty RPC result, never storing contact details locally.
 - Real (non-demo) tracking numbers not in our database are looked up live server-side (src/lib/live-tracking.server.ts: Ethiopian Post site, then Cainiao fallback); never call those sites from the browser (CORS + scraping belongs on the server).
 - Calculator pricing uses the isolated, tested lookup in `src/lib/postage.ts`, separate from legacy shipping estimates, so missing tariffs cannot silently become invented prices.

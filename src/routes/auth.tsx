@@ -7,6 +7,8 @@ import { Screen, PrimaryButton, OutlineButton, BrandMark, inputClass } from "@/c
 import { supabase } from "@/integrations/supabase/client";
 import { lovable } from "@/integrations/lovable/index";
 import { useAuth } from "@/lib/auth";
+import { isNativeApp } from "@/lib/native-push";
+import { nativeGoogleSignIn } from "@/lib/native-google";
 
 const safePath = (p?: string) => (p && p.startsWith("/") && !p.startsWith("//") ? p : "/");
 
@@ -110,6 +112,16 @@ function AuthPage() {
 
   const google = async () => {
     sessionStorage.setItem("auth_redirect", safePath(redirect));
+    // Android app: Google's own account picker (Google blocks web sign-in inside apps).
+    if (await isNativeApp()) {
+      try {
+        await nativeGoogleSignIn();
+      } catch (err) {
+        const msg = (err as Error).message ?? "";
+        if (!/cancel/i.test(msg)) toast.error(msg || "Google sign-in failed.");
+      }
+      return;
+    }
     const res = await lovable.auth.signInWithOAuth("google", { redirect_uri: window.location.origin + "/auth" });
     if (res.error) toast.error(res.error.message);
   };
