@@ -74,6 +74,7 @@ export function BottomNav() {
       <li key={to}>
         <Link
           to={to}
+          aria-current={active ? "page" : undefined}
           className={cn(
             "flex h-16 flex-col items-center justify-center gap-1 text-[11px]",
             active ? "font-extrabold text-primary" : "font-medium text-muted-foreground/70",
