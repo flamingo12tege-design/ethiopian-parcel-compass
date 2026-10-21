@@ -53,7 +53,7 @@ export function LiveTracking({ tn }: { tn: string }) {
           <CopyButton value={r.trackingNumber} />
         </div>
         <p className="mt-1 text-xs text-muted-foreground">
-          Live data from {r.source === "ethiopost" ? "Ethiopian Post official tracking" : "international carrier tracking"}
+          Live data from {r.source === "official" ? "Ethiopian Post official tracking" : "international carrier tracking"}
         </p>
         {(r.origin || r.destination) && (
           <div className="mt-3 grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-3 border-t pt-3">
