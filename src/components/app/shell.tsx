@@ -75,8 +75,8 @@ export function BottomNav() {
         <Link
           to={to}
           className={cn(
-            "flex h-16 flex-col items-center justify-center gap-1 text-[11px] font-semibold",
-            active ? "text-primary" : "text-muted-foreground",
+            "flex h-16 flex-col items-center justify-center gap-1 text-[11px]",
+            active ? "font-extrabold text-primary" : "font-medium text-muted-foreground/70",
           )}
         >
           <Icon className="h-5 w-5" strokeWidth={2} />
@@ -94,7 +94,10 @@ export function BottomNav() {
             to="/track"
             aria-label="Track parcel"
             aria-current={trackActive ? "page" : undefined}
-            className="-mt-7 flex flex-col items-center gap-1 text-[11px] font-semibold text-primary"
+            className={cn(
+              "-mt-7 flex flex-col items-center gap-1 text-[11px]",
+              trackActive ? "font-extrabold text-primary" : "font-medium text-muted-foreground/70",
+            )}
           >
             <span
               className="grid h-16 w-16 shrink-0 place-items-center rounded-full border-4 border-background bg-highlight text-highlight-foreground shadow-card"
