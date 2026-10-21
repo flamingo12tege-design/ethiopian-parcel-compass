@@ -31,7 +31,7 @@ Remove them before going live.
 ```bash
 git clone <your repo> && cd <repo>
 bun install
-# set server.url in capacitor.config.ts to your published URL
+# set CONFIG_URL in native-shell/index.html to your GitHub raw app-config.json (see "Remote server switch")
 npx cap add android
 cp /path/to/google-services.json android/app/google-services.json
 npx cap sync android
@@ -51,3 +51,10 @@ right after inserting a tracking event.
 - Delete demo parcels/post offices and replace with real data.
 - Replace illustrative rates in `src/lib/parcels.ts`.
 - Add a staff/admin role for inserting tracking events (currently only possible server-side).
+
+## Remote server switch (backup)
+
+The APK bundles `native-shell/index.html`, which reads `public/app-config.json` from your GitHub repo
+(raw URL in `CONFIG_URL`) and opens `serverUrl`. If GitHub is unreachable it uses the last known URL,
+then the Lovable URL. To move all installed apps (e.g. to Vercel), edit `serverUrl` on GitHub; the new
+host must be listed in `server.allowNavigation` in `capacitor.config.ts` when the APK is built.
