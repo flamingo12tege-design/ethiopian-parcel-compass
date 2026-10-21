@@ -73,11 +73,11 @@ function AuthPage() {
     e.preventDefault();
     if (mode === "forgot") {
       const r = z.string().trim().email("Enter a valid email").safeParse(email);
-      if (!r.success) return toast.error(r.error.issues[0]?.message);
+      if (!r.success) { toast.error(r.error.issues[0]?.message); return; }
       setBusy(true);
       const { error } = await supabase.auth.resetPasswordForEmail(r.data, { redirectTo: `${window.location.origin}/reset-password` });
       setBusy(false);
-      if (error) return toast.error(error.message);
+      if (error) { toast.error(error.message); return; }
       toast.success("If that email has an account, a reset link is on its way.");
       setMode("in");
       return;
