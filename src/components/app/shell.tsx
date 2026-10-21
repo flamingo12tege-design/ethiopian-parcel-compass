@@ -1,5 +1,5 @@
 import { Link, useRouter, useRouterState } from "@tanstack/react-router";
-import { ChevronLeft, Home, Search, Calculator, LayoutGrid, UserRound } from "lucide-react";
+import { ChevronLeft, Home, PackageSearch, Calculator, LayoutGrid, UserRound } from "lucide-react";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/ethiopost-logo.png.asset.json";
@@ -99,7 +99,7 @@ export function BottomNav() {
             <span
               className="grid h-16 w-16 shrink-0 place-items-center rounded-full border-4 border-background bg-highlight text-highlight-foreground shadow-card"
             >
-              <Search className="h-7 w-7" strokeWidth={2.5} />
+              <PackageSearch className="h-7 w-7" strokeWidth={2.25} />
             </span>
             <span className="pb-2">Track</span>
           </Link>
