@@ -110,6 +110,16 @@ function AuthPage() {
 
   const google = async () => {
     sessionStorage.setItem("auth_redirect", safePath(redirect));
+    // Android app: Google's own account picker (Google blocks web sign-in inside apps).
+    if (await isNativeApp()) {
+      try {
+        await nativeGoogleSignIn();
+      } catch (err) {
+        const msg = (err as Error).message ?? "";
+        if (!/cancel/i.test(msg)) toast.error(msg || "Google sign-in failed.");
+      }
+      return;
+    }
     const res = await lovable.auth.signInWithOAuth("google", { redirect_uri: window.location.origin + "/auth" });
     if (res.error) toast.error(res.error.message);
   };
