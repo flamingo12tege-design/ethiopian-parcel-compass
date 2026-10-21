@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/notifications")({
   head: () => ({
     meta: [
-      { title: "Notifications — Ethiopian Postal Service" },
+      { title: "Notifications — Ethio Post" },
       { name: "description", content: "Status updates for the parcels you follow." },
       { property: "og:title", content: "Notifications" },
       { property: "og:description", content: "Status updates for the parcels you follow." },

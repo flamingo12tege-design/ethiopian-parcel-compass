@@ -20,7 +20,7 @@ export const Route = createFileRoute("/track/$trackingNumber")({
   },
   head: ({ params }) => ({
     meta: [
-      { title: `Tracking ${params.trackingNumber} — Ethiopian Postal Service` },
+      { title: `Tracking ${params.trackingNumber} — Ethio Post` },
       { name: "description", content: `Latest status and history for parcel ${params.trackingNumber}.` },
       { property: "og:title", content: `Tracking ${params.trackingNumber}` },
       { property: "og:description", content: "Parcel status and tracking history." },

@@ -11,15 +11,15 @@ import parcel from "@/assets/parcel.webp";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ethiopian Postal Service — Track Parcels" },
+      { title: "Ethio Post — Track Parcels" },
       {
         name: "description",
-        content: "Track your parcel, send a package and find the nearest post office.",
+        content: "Track your parcel and send a package.",
       },
-      { property: "og:title", content: "Ethiopian Postal Service — Track Parcels" },
+      { property: "og:title", content: "Ethio Post — Track Parcels" },
       {
         property: "og:description",
-        content: "Track your parcel, send a package and find the nearest post office.",
+        content: "Track your parcel and send a package.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

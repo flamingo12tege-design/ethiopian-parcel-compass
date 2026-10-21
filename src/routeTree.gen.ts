@@ -15,7 +15,6 @@ import { Route as CalculatorRouteImport } from './routes/calculator'
 import { Route as ClaimsRouteImport } from './routes/claims'
 import { Route as GuideRouteImport } from './routes/guide'
 import { Route as InfoRouteImport } from './routes/info'
-import { Route as LocatorRouteImport } from './routes/locator'
 import { Route as NotificationsRouteImport } from './routes/notifications'
 import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as ServicesRouteImport } from './routes/services'
@@ -52,11 +51,6 @@ const GuideRoute = GuideRouteImport.update({
 const InfoRoute = InfoRouteImport.update({
   id: '/info',
   path: '/info',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LocatorRoute = LocatorRouteImport.update({
-  id: '/locator',
-  path: '/locator',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NotificationsRoute = NotificationsRouteImport.update({
@@ -102,7 +96,6 @@ export interface FileRoutesByFullPath {
   '/claims': typeof ClaimsRoute
   '/guide': typeof GuideRoute
   '/info': typeof InfoRoute
-  '/locator': typeof LocatorRoute
   '/notifications': typeof NotificationsRoute
   '/profile': typeof ProfileRoute
   '/services': typeof ServicesRoute
@@ -118,7 +111,6 @@ export interface FileRoutesByTo {
   '/claims': typeof ClaimsRoute
   '/guide': typeof GuideRoute
   '/info': typeof InfoRoute
-  '/locator': typeof LocatorRoute
   '/notifications': typeof NotificationsRoute
   '/profile': typeof ProfileRoute
   '/services': typeof ServicesRoute
@@ -135,7 +127,6 @@ export interface FileRoutesById {
   '/claims': typeof ClaimsRoute
   '/guide': typeof GuideRoute
   '/info': typeof InfoRoute
-  '/locator': typeof LocatorRoute
   '/notifications': typeof NotificationsRoute
   '/profile': typeof ProfileRoute
   '/services': typeof ServicesRoute
@@ -153,7 +144,6 @@ export interface FileRouteTypes {
     | '/claims'
     | '/guide'
     | '/info'
-    | '/locator'
     | '/notifications'
     | '/profile'
     | '/services'
@@ -169,7 +159,6 @@ export interface FileRouteTypes {
     | '/claims'
     | '/guide'
     | '/info'
-    | '/locator'
     | '/notifications'
     | '/profile'
     | '/services'
@@ -185,7 +174,6 @@ export interface FileRouteTypes {
     | '/claims'
     | '/guide'
     | '/info'
-    | '/locator'
     | '/notifications'
     | '/profile'
     | '/services'
@@ -202,7 +190,6 @@ export interface RootRouteChildren {
   ClaimsRoute: typeof ClaimsRoute
   GuideRoute: typeof GuideRoute
   InfoRoute: typeof InfoRoute
-  LocatorRoute: typeof LocatorRoute
   NotificationsRoute: typeof NotificationsRoute
   ProfileRoute: typeof ProfileRoute
   ServicesRoute: typeof ServicesRoute
@@ -254,13 +241,6 @@ declare module '@tanstack/react-router' {
       path: '/info'
       fullPath: '/info'
       preLoaderRoute: typeof InfoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/locator': {
-      id: '/locator'
-      path: '/locator'
-      fullPath: '/locator'
-      preLoaderRoute: typeof LocatorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/notifications': {
@@ -322,7 +302,6 @@ const rootRouteChildren: RootRouteChildren = {
   ClaimsRoute: ClaimsRoute,
   GuideRoute: GuideRoute,
   InfoRoute: InfoRoute,
-  LocatorRoute: LocatorRoute,
   NotificationsRoute: NotificationsRoute,
   ProfileRoute: ProfileRoute,
   ServicesRoute: ServicesRoute,

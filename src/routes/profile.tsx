@@ -12,7 +12,7 @@ import { registerNativePush, unregisterNativePush } from "@/lib/native-push";
 export const Route = createFileRoute("/profile")({
   head: () => ({
     meta: [
-      { title: "Profile & Settings — Ethiopian Postal Service" },
+      { title: "Profile & Settings — Ethio Post" },
       { name: "description", content: "Manage your account and notification settings." },
       { property: "og:title", content: "Profile & Settings" },
       { property: "og:description", content: "Manage your account and notification settings." },
@@ -139,7 +139,7 @@ function Profile() {
 
         <footer className="flex flex-col items-center gap-2 pb-6 pt-4">
           <BrandMark />
-          <p className="text-xs text-muted-foreground">© 2026 Ethiopian Postal Service · Demo app</p>
+          <p className="text-xs text-muted-foreground">© 2026 Ethio Post · Demo app</p>
         </footer>
       </main>
     </Screen>

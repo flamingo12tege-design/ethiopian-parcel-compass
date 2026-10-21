@@ -49,7 +49,7 @@ export function SplashScreen() {
         className="h-28 w-28 rounded-full bg-background object-cover shadow-card"
       />
       <p className="mt-6 font-ethiopic text-xl font-bold">የኢትዮጵያ ፖስታ አገልግሎት</p>
-      <p className="mt-1 text-sm font-semibold opacity-90">Ethiopian Postal Service</p>
+      <p className="mt-1 text-sm font-semibold opacity-90">Ethio Post</p>
       <div className="mt-10 h-1 w-24 overflow-hidden rounded-full bg-primary-foreground/20">
         <div className="splash-loader h-full w-1/2 rounded-full bg-highlight" />
       </div>

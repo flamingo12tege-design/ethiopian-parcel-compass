@@ -6,7 +6,7 @@ import { Screen, PageHeader, Card } from "@/components/app/shell";
 export const Route = createFileRoute("/claims")({
   head: () => ({
     meta: [
-      { title: "Lost or Delayed Parcel Claims — Ethiopian Postal Service" },
+      { title: "Lost or Delayed Parcel Claims — Ethio Post" },
       { name: "description", content: "What you need and the steps to file a claim for a lost, damaged or delayed item." },
       { property: "og:title", content: "Lost or Delayed Parcel Claims" },
       { property: "og:description", content: "What you need and the steps to file a claim for a lost, damaged or delayed item." },

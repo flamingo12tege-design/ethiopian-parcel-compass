@@ -14,7 +14,7 @@ export const Route = createFileRoute("/parcel/$trackingNumber")({
       { title: `Parcel ${params.trackingNumber} — Details` },
       { name: "description", content: "Service type, weight, sender and recipient for this parcel." },
       { property: "og:title", content: `Parcel ${params.trackingNumber} — Details` },
-      { property: "og:description", content: "Parcel details from the Ethiopian Postal Service app." },
+      { property: "og:description", content: "Parcel details from the Ethio Post app." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],

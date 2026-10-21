@@ -5,7 +5,7 @@ import { SERVICES } from "@/lib/parcels";
 export const Route = createFileRoute("/info")({
   head: () => ({
     meta: [
-      { title: "Service Information — Ethiopian Postal Service" },
+      { title: "Service Information — Ethio Post" },
       { name: "description", content: "Rates, delivery times, FAQs and contact details." },
       { property: "og:title", content: "Service Information" },
       { property: "og:description", content: "Rates, delivery times, FAQs and contact details." },

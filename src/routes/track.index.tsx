@@ -7,9 +7,9 @@ import parcel from "@/assets/parcel.webp";
 export const Route = createFileRoute("/track/")({
   head: () => ({
     meta: [
-      { title: "Track Parcel — Ethiopian Postal Service" },
+      { title: "Track Parcel — Ethio Post" },
       { name: "description", content: "Enter your tracking number to see where your parcel is." },
-      { property: "og:title", content: "Track Parcel — Ethiopian Postal Service" },
+      { property: "og:title", content: "Track Parcel — Ethio Post" },
       {
         property: "og:description",
         content: "Enter your tracking number to see where your parcel is.",

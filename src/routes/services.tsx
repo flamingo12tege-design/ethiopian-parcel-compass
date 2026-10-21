@@ -6,10 +6,10 @@ import { ServiceIcon } from "@/components/app/service-icon";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Ethiopian Postal Service" },
-      { name: "description", content: "Post offices, price calculator, claims, shipping guide and service information in one place." },
+      { title: "Services — Ethio Post" },
+      { name: "description", content: "Price calculator, claims, shipping guide and service information in one place." },
       { property: "og:title", content: "Postal Services" },
-      { property: "og:description", content: "Post offices, price calculator, claims, shipping guide and service information in one place." },
+      { property: "og:description", content: "Price calculator, claims, shipping guide and service information in one place." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -18,7 +18,6 @@ export const Route = createFileRoute("/services")({
 });
 
 const ITEMS = [
-  { to: "/locator", label: "Post Offices", desc: "Find a branch near you", icon: "office" },
   { to: "/calculator", label: "Price Calculator", desc: "Estimate shipping cost", icon: "calculator" },
   { to: "/claims", label: "Claims", desc: "Lost, damaged or delayed items", icon: "claim" },
   { to: "/guide", label: "Shipping Guide", desc: "What you can send and how", icon: "guide" },

@@ -5,7 +5,7 @@ import { Screen, PageHeader, Card } from "@/components/app/shell";
 export const Route = createFileRoute("/guide")({
   head: () => ({
     meta: [
-      { title: "Shipping Guide & Prohibited Items — Ethiopian Postal Service" },
+      { title: "Shipping Guide & Prohibited Items — Ethio Post" },
       { name: "description", content: "What you can't send, restricted items, packing tips and customs forms for international mail." },
       { property: "og:title", content: "Shipping Guide & Prohibited Items" },
       { property: "og:description", content: "What you can't send, restricted items, packing tips and customs forms for international mail." },
