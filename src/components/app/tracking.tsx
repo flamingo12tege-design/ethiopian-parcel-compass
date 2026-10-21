@@ -51,7 +51,7 @@ export function CompactTrackSearch() {
         aria-label="Track"
         className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-highlight text-highlight-foreground"
       >
-        <Search className="h-5 w-5" />
+        <Search className="h-5 w-5" strokeWidth={3} />
       </button>
     </form>
   );
