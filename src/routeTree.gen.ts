@@ -17,6 +17,7 @@ import { Route as GuideRouteImport } from './routes/guide'
 import { Route as InfoRouteImport } from './routes/info'
 import { Route as NotificationsRouteImport } from './routes/notifications'
 import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ParcelTrackingNumberRouteImport } from './routes/parcel.$trackingNumber'
 import { Route as TrackIndexRouteImport } from './routes/track.index'
@@ -63,6 +64,11 @@ const ProfileRoute = ProfileRouteImport.update({
   path: '/profile',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
@@ -98,6 +104,7 @@ export interface FileRoutesByFullPath {
   '/info': typeof InfoRoute
   '/notifications': typeof NotificationsRoute
   '/profile': typeof ProfileRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/services': typeof ServicesRoute
   '/parcel/$trackingNumber': typeof ParcelTrackingNumberRoute
   '/track/$trackingNumber': typeof TrackTrackingNumberRoute
@@ -113,6 +120,7 @@ export interface FileRoutesByTo {
   '/info': typeof InfoRoute
   '/notifications': typeof NotificationsRoute
   '/profile': typeof ProfileRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/services': typeof ServicesRoute
   '/parcel/$trackingNumber': typeof ParcelTrackingNumberRoute
   '/track/$trackingNumber': typeof TrackTrackingNumberRoute
@@ -129,6 +137,7 @@ export interface FileRoutesById {
   '/info': typeof InfoRoute
   '/notifications': typeof NotificationsRoute
   '/profile': typeof ProfileRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/services': typeof ServicesRoute
   '/parcel/$trackingNumber': typeof ParcelTrackingNumberRoute
   '/track/$trackingNumber': typeof TrackTrackingNumberRoute
@@ -146,6 +155,7 @@ export interface FileRouteTypes {
     | '/info'
     | '/notifications'
     | '/profile'
+    | '/reset-password'
     | '/services'
     | '/parcel/$trackingNumber'
     | '/track/$trackingNumber'
@@ -161,6 +171,7 @@ export interface FileRouteTypes {
     | '/info'
     | '/notifications'
     | '/profile'
+    | '/reset-password'
     | '/services'
     | '/parcel/$trackingNumber'
     | '/track/$trackingNumber'
@@ -176,6 +187,7 @@ export interface FileRouteTypes {
     | '/info'
     | '/notifications'
     | '/profile'
+    | '/reset-password'
     | '/services'
     | '/parcel/$trackingNumber'
     | '/track/$trackingNumber'
@@ -192,6 +204,7 @@ export interface RootRouteChildren {
   InfoRoute: typeof InfoRoute
   NotificationsRoute: typeof NotificationsRoute
   ProfileRoute: typeof ProfileRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
   ServicesRoute: typeof ServicesRoute
   ParcelTrackingNumberRoute: typeof ParcelTrackingNumberRoute
   TrackTrackingNumberRoute: typeof TrackTrackingNumberRoute
@@ -257,6 +270,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProfileRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
@@ -304,6 +324,7 @@ const rootRouteChildren: RootRouteChildren = {
   InfoRoute: InfoRoute,
   NotificationsRoute: NotificationsRoute,
   ProfileRoute: ProfileRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
   ServicesRoute: ServicesRoute,
   ParcelTrackingNumberRoute: ParcelTrackingNumberRoute,
   TrackTrackingNumberRoute: TrackTrackingNumberRoute,

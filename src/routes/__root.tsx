@@ -123,7 +123,9 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-  const showNav = useRouterState({ select: (s) => (s.resolvedLocation ?? s.location).pathname !== "/auth" });
+  const showNav = useRouterState({
+    select: (s) => !["/auth", "/reset-password"].includes((s.resolvedLocation ?? s.location).pathname),
+  });
 
   return (
     <QueryClientProvider client={queryClient}>
