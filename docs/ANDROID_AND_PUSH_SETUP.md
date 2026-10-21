@@ -21,7 +21,7 @@ Remove them before going live.
 
 ## 1. Connect Firebase Cloud Messaging
 
-- Create a Firebase project, add an Android app with package name `et.post.tracking.demo` (or your own; keep it
+- Create a Firebase project, add an Android app with package name `et.post.tegene` (or your own; keep it
   in sync with `capacitor.config.ts`), and download `google-services.json`.
 - In Lovable, connect the **Firebase Cloud Messaging** connector (service account). This provides the server
   credentials; no keys go into the code.
