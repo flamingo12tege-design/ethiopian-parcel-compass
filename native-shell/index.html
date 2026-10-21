@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Ethio Post</title>
+  <style>
+    html, body { margin: 0; height: 100%; background: #0b3a82; color: #fff; font-family: system-ui, sans-serif; }
+    body { display: grid; place-items: center; text-align: center; }
+    .t { font-size: 22px; font-weight: 800; letter-spacing: .3px; }
+    .s { opacity: .75; font-size: 13px; margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <div><div class="t">Ethio Post</div><div class="s">Loading…</div></div>
+  <script>
+    // Remote switch: edit app-config.json on GitHub to move every installed app to a new server.
+    // Replace YOUR-GITHUB-USER/YOUR-REPO after connecting GitHub.
+    var CONFIG_URL = "https://raw.githubusercontent.com/YOUR-GITHUB-USER/YOUR-REPO/main/public/app-config.json";
+    var FALLBACK = "https://ethiopian-parcel-compass.lovable.app";
+    var KEY = "ethiopost_server_url";
+    function go(u) { window.location.replace(u); }
+    function valid(u) { return typeof u === "string" && /^https:\/\/[^\s]+$/.test(u); }
+    var cached = null;
+    try { cached = localStorage.getItem(KEY); } catch (e) {}
+    var done = false;
+    var timer = setTimeout(function () { if (!done) { done = true; go(valid(cached) ? cached : FALLBACK); } }, 1500);
+    fetch(CONFIG_URL + "?t=" + Date.now(), { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (cfg) {
+        var url = cfg && valid(cfg.serverUrl) ? cfg.serverUrl.replace(/\/$/, "") : null;
+        if (url) { try { localStorage.setItem(KEY, url); } catch (e) {} }
+        if (!done) { done = true; clearTimeout(timer); go(url || (valid(cached) ? cached : FALLBACK)); }
+      })
+      .catch(function () {});
+  </script>
+</body>
+</html>

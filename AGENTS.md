@@ -16,7 +16,7 @@
 - Status changes are inserted as `tracking_events`; a DB trigger updates parcel status and fans out deduped notifications (UNIQUE user_id,event_id).
 - Push sending lives in src/lib/push.server.ts and claims rows pending->sending atomically; never send FCM from the client.
 - Demo records are flagged `is_demo` / `is_simulated` and must always be labelled in the UI.
-- Android uses Capacitor loading the published URL (SSR app); setup in docs/ANDROID_AND_PUSH_SETUP.md.
+- Android uses Capacitor with a bundled launcher (native-shell) that reads the server URL from app-config.json on GitHub, falling back to the Lovable URL; so hosting can move without a new APK.
 - Recent tracking stores only successful identifiers on the device; Home reads the masked RPC first and uses the shared five-minute live-carrier query only after a successful empty RPC result, never storing contact details locally.
 - Real (non-demo) tracking numbers not in our database are looked up live server-side (src/lib/live-tracking.server.ts: Ethiopian Post site, then Cainiao fallback); never call those sites from the browser (CORS + scraping belongs on the server).
 - Calculator pricing uses the isolated, tested lookup in `src/lib/postage.ts`, separate from legacy shipping estimates, so missing tariffs cannot silently become invented prices.
