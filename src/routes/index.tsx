@@ -44,7 +44,7 @@ function useUnreadCount() {
 }
 
 const QUICK = [
-  { to: "/calculator", label: "Price Calculator", icon: Calculator },
+  { to: "/calculator", label: "Calculate", icon: Calculator },
   { to: "/claims", label: "Claims", icon: ShieldAlert },
   { to: "/guide", label: "Shipping Guide", icon: BookOpen },
   { to: "/info", label: "FAQs", icon: CircleHelp },
