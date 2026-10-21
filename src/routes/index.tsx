@@ -55,9 +55,8 @@ function Home() {
   return (
     <Screen>
       <header className="pt-safe bg-primary text-primary-foreground">
-        <div className="grid h-16 grid-cols-[2.5rem_minmax(0,1fr)_2.5rem] items-center px-2">
-          <span />
-          <div className="flex justify-center">
+        <div className="grid h-16 grid-cols-[minmax(0,1fr)_2.5rem] items-center px-3">
+          <div className="flex min-w-0 justify-start">
             <BrandMark light />
           </div>
           <Link
